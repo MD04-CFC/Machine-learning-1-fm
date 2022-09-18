@@ -85,15 +85,12 @@ perceptron.fit(X, y)
 print(perceptron.w)
 
 
-
-with open(r"stats_4.txt", "r") as file:
-     b=len(file.readlines())
 file2 = open(r"stats_5.txt", "w")
 data_collected = np.loadtxt(r"stats_4.txt",delimiter=',', dtype=int)
 print(data_collected)
 
 
-for i in range(0,b):
+for i in range(0,len(data_collected)):
     print(perceptron.predict(data_collected[i]))
     if (perceptron.predict(data_collected[i])==1):
         file2.writelines('1')
@@ -103,8 +100,7 @@ for i in range(0,b):
         file2.writelines('\n')
         
         
-        
-file.close()        
+                 
 file2.close()        
 d.close()        
 
