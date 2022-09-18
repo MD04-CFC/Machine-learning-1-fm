@@ -12,9 +12,8 @@ stats = pd.read_csv(r"stats3.csv",
                    names = ['goals', 'finishing', 
                             'composure', 'bravery', 'xg']) 
 
-with open(r"stats3.csv", 'r') as d:
-    a=len(d.readlines())
-y=np.array(np.zeros(a))
+
+y=np.array(np.zeros(len(stats)))
 
 stats.head()
  
@@ -66,7 +65,7 @@ class Perceptron:
 X=np.array(stats)
 
 
-for i in range(0,a):
+for i in range(0,len(stats)):
     if (X[i][0]>(1.2 * X[i][4])):
         y[i]=1
     else:
@@ -102,7 +101,7 @@ for i in range(0,len(data_collected)):
         
                  
 file2.close()        
-d.close()        
+     
 
 
 
